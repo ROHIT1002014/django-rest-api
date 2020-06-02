@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # third party app
     'rest_framework',
+    'corsheaders', # added cors
 ]
 
 REST_FRAMEWORK = {
@@ -52,11 +53,17 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # added cors and it must be above django.middleware.common.CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:8080',
+    'http://localhost:3000',
 ]
 
 ROOT_URLCONF = 'library_project.urls'
