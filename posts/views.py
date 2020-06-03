@@ -3,12 +3,12 @@ from .models import Posts
 from .serializers import PostSerializer
 
 # Create your views here.
-class PostList(generics.CreateAPIView):
-  permission_classes = [permissions.IsAuthenticated]
+class PostList(generics.ListCreateAPIView):
+  permission_classes = [permissions.IsAuthenticatedOrReadOnly]
   queryset = Posts.objects.all()
   serializer_class = PostSerializer
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-  permission_classes = [permissions.IsAuthenticated]
+  permission_classes = [permissions.IsAuthenticatedOrReadOnly]
   queryset = Posts.objects.all()
   serializer_class = PostSerializer
