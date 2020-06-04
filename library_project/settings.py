@@ -40,7 +40,9 @@ INSTALLED_APPS = [
 
     'posts',
     'rest_framework',
-    # 'cors'
+    # for token authentication
+    'rest_framework.authtoken',
+
 ]
 
 REST_FRAMEWORK = {
@@ -49,7 +51,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_AUTHENTICATION_CLASSES' : [
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
     ],
 
     # added pagination for the information
