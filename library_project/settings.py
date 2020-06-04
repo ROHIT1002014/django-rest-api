@@ -43,6 +43,12 @@ INSTALLED_APPS = [
     # for token authentication
     'rest_framework.authtoken',
     'rest_auth',
+
+    # django registration and social account registration
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
 
 REST_FRAMEWORK = {
@@ -138,3 +144,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # used to give email to console for email confirmation during registration
+SITE_ID = 1
