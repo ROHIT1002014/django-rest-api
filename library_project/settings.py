@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # for token authentication
     'rest_framework.authtoken',
-
+    'rest_auth',
 ]
 
 REST_FRAMEWORK = {
