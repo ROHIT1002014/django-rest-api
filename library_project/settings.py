@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+
+    # 3rd party pakage for django shcema
+    'rest_framework_swagger',
 ]
 
 REST_FRAMEWORK = {

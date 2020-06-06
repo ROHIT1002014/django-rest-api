@@ -5,3 +5,4 @@ django-rest-auth
 django-allauth
 pyyaml
 coreapi-cli
+django-rest-swagger
