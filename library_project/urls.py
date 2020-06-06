@@ -18,7 +18,10 @@ from django.urls import path, include
 from rest_framework.schemas import get_schema_view
 from rest_framework.documentation import include_docs_urls
 
-schema_view = get_schema_view(title='Blog Schema')
+API_TITLE = 'Blog API'
+API_DESCRIPTION = 'a web api for creating and deleting post'
+
+schema_view = get_schema_view(title=API_TITLE)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +31,5 @@ urlpatterns = [
     path('api/v1/rest-auth/registration/',
         include('rest_auth.registration.urls')),
     path('schema/', schema_view),  # added schema to make it machine readable form
-    path('docs/', include_docs_urls(title='Blog Api')),   # by this schema will be in human readable form
+    path('docs/', include_docs_urls(title=API_TITLE, description=API_DESCRIPTION)),   # by this schema will be in human readable form
 ]
