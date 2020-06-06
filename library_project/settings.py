@@ -54,6 +54,11 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
 ]
 
+SWAGGER_SETTINGS = {
+    'LOGIN_URL' : 'rest_framework:login',
+    'LOGOUT_URL' : 'rest_framework:logout',
+}
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES' : [
         'rest_framework.permissions.AllowAny',
